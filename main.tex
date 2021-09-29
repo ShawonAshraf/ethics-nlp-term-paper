@@ -86,7 +86,18 @@ To extend the topic of perceiving male as a general or generic prototype, we nee
 
 
 \section*{Bias in NLP}
-Source of bias in data, how it's connected to cognitive and linguistic proponents stated above
+So far we have been discussing how gender bias plagues language and how it stems for various norms and stereotypes. Now we move on to various applications of natural language processing which are also affected by gender bias. 
+
+
+\subsection*{Ghost in the shell or bias in data}
+NLP applications such as, Machine Translation, Sentiment Analysis, Text Classification etc. use text corpora as their source. In a typical natural language processing setup, any text data or corpus is first represented in a numerical format, then passed as input to a learning algorithm or to create a model of the data, which afterwards is used for inferring the outputs for the desired tasks. The key thing to note here is the stage between input and the output, also known as the intermediate stage, where any machine learning or predictive algorithm will try to create an understanding of the data it has been fed (hence the term modelling). Depending on the algorithm at use, this intermediate process can either be very simple and explainable, such as Naive Bayes classifiers for finding spam emails to language models based around Transformer architecture such as BERT \cite{devlin-etal-2019-bert}, GPT \cite{brown2020language} etc. Let us put this intermediate step aside for a while and look at the input step. When we are converting text to numbers, e.g. bag of words, we are actually converting the contents of the text. So what is in the text becomes numeric inputs to NLP models. As a result, the gender bias in text gets numerically represented and when the models start learning this representation, they learn the bias in the text as well. This situation is similar to what we have discussed previously that bias gets systematically planted into language. In the following sections, we discuss some work done on finding gender bias in NLP applications.
+
+\subsection*{Sentiment Analysis}
+To discuss gender bias in sentiment analysis we are going to focus on \cite{kiritchenko2018examining}, where the authors try to evaluate if machine learning models exhibit human like bias and how it affects the overall results. \\
+
+
+
+
 
 \section{Gender in NLP}
 Ethical issues, should gender be used as a variable at all, various nlp tasks and bias in them (summaries and opinions on papers)
