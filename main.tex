@@ -12,7 +12,7 @@
 \usepackage{adjustbox}
 \usepackage{breakcites}
 
-\title{Gender bias in Language from a Natural Language Processing Perspective}
+\title{Gender Bias in Language from a Natural Language Processing Perspective}
 \author{Shawon Ashraf \\ st170090@stud.uni-stuttgart.de}
 \date{29 September 2021}
 
@@ -111,7 +111,7 @@ Despite using a simple sentence structure corpus, the models exhibited gender bi
 In the last section, we talked about gender biased word embeddings and how the source of the word embeddings can affect it. In their work, \cite{bolukbasi2016man} show that word embeddings can indeed get gender bias from the text they were trained with. For example, engineers are pre-dominantly male while women are more associated to house-wives. Word embeddings are essentially trained in an unsupervised approach, meaning, they only have the input data and no reference label to check their output against. So for example if someone trains word embeddings from San Tzus Art of War, the embeddings will only have knowledge on military and warefare. Since generalized word embeddings exhibit gender bias, a case can be made that the training data for the word embeddings be free from gender bias or have very minimum amount of it. (This falls into the area of debiasing which we shall discuss in a later section of this paper.). 
 
 \subsubsection*{Contextualized word embeddings}
-Word embeddings such as GloVe \cite{pennington2014glove} and Word2Vec have a singular representation for all the text in the corpus. They are not context sensitive. So even if there are multiple context sensitive usages of a word, it will still have a one single embedding for all the contexts. On the other hand, word embeddings from ELMo \cite{peters2018deep} are contextualized. Since contextualized embeddings learn the context of the word, they should be better able to infer the meaning of a word in a specific context and also learn the gender properly as well. While the first part of this assumption is true, the latter is not. \cite{zhao2019gender} have shown that ELMo shows significantly more gender bias in a Coreference Resolution task than a similar system based on GloVe \cite{lee2018higher}, in fact bias in the ELMo based system in their experiment showed 30\% more bias than the GloVe based system. Also, while analysing their results the authors made some interesting revelations. First, the training data for ELMo contained an imbalanced ratio of male to female entities, which they found to be 1:3. Second, the encoding process or the conversion process of ELMo does not give equal emphasis to both genders, hence resulting in a skewed distribution, biased more towards males.  \\
+Word embeddings such as GloVe \cite{pennington2014glove} and Word2Vec have a singular representation for all the text in the corpus. They are not context sensitive. So even if there are multiple context sensitive usages of a word, it will still have a one single embedding for all the contexts. On the other hand, word embeddings from ELMo \cite{peters2018deep} are contextualized. Since contextualized embeddings learn the context of the word, they should be better able to infer the meaning of a word in a specific context and also learn the gender properly as well. While the first part of this assumption is true, the latter is not. \cite{zhao2019gender} have shown that ELMo shows significantly more gender bias in a Coreference Resolution task than a similar system based on GloVe \cite{lee2018higher}, in fact bias in the ELMo based system in their experiment showed 30\% more bias than the GloVe based system. Also, while analysing their results the authors made some interesting revelations. First, the training data for ELMo contained an imbalanced ratio of male to female entities, which they found to be 1$:$3. Second, the encoding process or the conversion process of ELMo does not give equal emphasis to both genders, hence resulting in a skewed distribution, biased more towards males.  \\
 
 \noindent
 Since word embeddings are unsupervised learners and going to learn the distribution in the training data, we can say here that input or training data is perhaps the biggest culprit in inducing gender bias. Coreference Resolution, as stated earlier, is one of the tasks where gender bias is almost omnipresent. In the next section, we are going to discuss about this. 
@@ -127,6 +127,16 @@ In coreference resolution, the task is to map multiple expressions to the same e
 This again brings us back to the earlier sections of the paper where we said that the social roles of genders give more status quo to males over females. Since this mindset is inherent in language, the models trained on corpora collected from general sources will exhibit this problem as well. 
 
 \subsection*{Machine Translation}
+Gender bias in Machine Translation stems from coreference resolution, which we have discussed in the previous section. To describe this problem in a natural tone, let us take this example from \cite{saunders-byrne-2020-reducing} $:$ \textit{The doctor told the nurse that she had been busy.}. If a human had been asked to figure out who "she" here is, they can easily say that "she" is the doctor. However, this task is difficult for a coreference system and even more critical in a machine translation setup. Outputs in machine translation are sequential, with each part relying on the previous one. This can be compared to a chain, where each component is tied to the previous one. As a result if one part gets a wrong translation, the error will propagate through the rest of the outputs as well. \\
+
+\noindent
+Let us reconsider the Folk view of gender again. In many cultures, either motivated by religious or traditional beliefs the concept of gender is binary and anything else is almost rejected. However, concepts such as gender are not rigid, and many languages at present have adopted more gender neutral wordings for pronouns and professions to keep up with social changes \cite{misersky2019grammatical}. This poses a big problem for languages which are yet to adopt a newer overview of gender. As a result when translating from languages with the newer overview to older ones, the output is more likely to suffer from qualitative issues. 
+
+
+
+
+
+
 
 
 \section{Gender in NLP}
