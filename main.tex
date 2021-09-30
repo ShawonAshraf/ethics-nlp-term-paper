@@ -127,29 +127,18 @@ In coreference resolution, the task is to map multiple expressions to the same e
 This again brings us back to the earlier sections of the paper where we said that the social roles of genders give more status quo to males over females. Since this mindset is inherent in language, the models trained on corpora collected from general sources will exhibit this problem as well. 
 
 \subsection*{Machine Translation}
-Gender bias in Machine Translation stems from coreference resolution, which we have discussed in the previous section. To describe this problem in a natural tone, let us take this example from \cite{saunders-byrne-2020-reducing} $:$ \textit{The doctor told the nurse that she had been busy.}. If a human had been asked to figure out who "she" here is, they can easily say that "she" is the doctor. However, this task is difficult for a coreference system and even more critical in a machine translation setup. Outputs in machine translation are sequential, with each part relying on the previous one. This can be compared to a chain, where each component is tied to the previous one. As a result if one part gets a wrong translation, the error will propagate through the rest of the outputs as well. \\
+Gender bias in Machine Translation stems from coreference resolution, which we have discussed in the previous section. To describe this problem in a natural tone, let us take this example from \cite{saunders-byrne-2020-reducing} $:$ \textit{The doctor told the nurse that she had been busy.}. If a human had been asked to figure out who "she" here is, they can easily say that "she" is the doctor. However, this task is difficult for a coreference system \cite{gaut-etal-2020-towards} and even more critical in a machine translation setup. Outputs in machine translation are sequential, with each part relying on the previous one. This can be compared to a chain, where each component is tied to the previous one. As a result if one part gets a wrong translation, the error will propagate through the rest of the outputs as well. \\
 
 \noindent
 Let us reconsider the Folk view of gender again. In many cultures, either motivated by religious or traditional beliefs the concept of gender is binary and anything else is almost rejected. However, concepts such as gender are not rigid, and many languages at present have adopted more gender neutral wordings for pronouns and professions to keep up with social changes \cite{misersky2019grammatical}. This poses a big problem for languages which are yet to adopt a newer overview of gender. As a result when translating from languages with the newer overview to older ones, the output is more likely to suffer from qualitative issues. 
 
 
+\section*{Mitigating Bias}
 
 
 
 
-
-
-\section{Gender in NLP}
-Ethical issues, should gender be used as a variable at all, various nlp tasks and bias in them (summaries and opinions on papers)
-
-\section{Mitigating Bias}
-NLP and regular language
-
-debiasing in nlp
-gender fair expressions
-social change
-
-\section{Conclusion}
+\section*{Conclusion}
 Sum up alles
 
 \clearpage
