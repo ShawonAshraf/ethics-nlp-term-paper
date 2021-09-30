@@ -117,7 +117,16 @@ Word embeddings such as GloVe \cite{pennington2014glove} and Word2Vec have a sin
 Since word embeddings are unsupervised learners and going to learn the distribution in the training data, we can say here that input or training data is perhaps the biggest culprit in inducing gender bias. Coreference Resolution, as stated earlier, is one of the tasks where gender bias is almost omnipresent. In the next section, we are going to discuss about this. 
 
 
+\subsection*{Coreference Resolution}
+In coreference resolution, the task is to map multiple expressions to the same entity. For example, Simba said he would not go to the elephant graveyard. Here Simba and he are the same person. Hence the task is to map he to Simba. While this seems trivial on paper, we would like the reader to recall that when people are not sure which gender to assign to an entity they end up using the masculine gender. Coreference Resolution is not immune to this normative effect either. \\
 
+\noindent
+\cite{rudinger-etal-2018-gender} applied coreference resolution to infer how gender bias can affect a system which predicts occupation of an entity from text. Their evaluation showed that the gender bias in the outputs of the systems they tested were similar to real world gender bias statistics in the employment sector. Also, their results found that when the systems encounter ambiguity, especially with neutral gender words, they tend to randomly assign an occupation. They opine that the systems or models overgeneralize on gender specific terms. \\ 
+
+\noindent
+This again brings us back to the earlier sections of the paper where we said that the social roles of genders give more status quo to males over females. Since this mindset is inherent in language, the models trained on corpora collected from general sources will exhibit this problem as well. 
+
+\subsection*{Machine Translation}
 
 
 \section{Gender in NLP}
