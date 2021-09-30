@@ -14,7 +14,7 @@
 
 \title{Gender Bias in Language from a Natural Language Processing Perspective}
 \author{Shawon Ashraf \\ st170090@stud.uni-stuttgart.de}
-\date{29 September 2021}
+\date{30 September 2021}
 
 
 
@@ -144,9 +144,25 @@ In many cases, masculine generics can indeed be replaced with gender fair or gen
 
 \section*{Mitigating Bias in NLP}
 
+\subsection*{Word Embeddings And Coreference Resolution}
+The unsupervised training nature of word embeddings essentially turn their intermediate processes into black boxes. Since the data distribution is learnt at the intermediate layers or the embedding layers, any attempt to understand or mitigate bias in embeddings has to be applied on these layers. Also, word embeddings get used in coreference resolution taks as well. So debiasing one will help reduce bias in another as well. \\
+
+
+\noindent
+\cite{prost2019debiasing} propose a deep neural network based debiasing method where they project word pairs from \cite{bolukbasi2016man} and project them to a gender subspace. Afterwards, they compare them against neutral words and create new debiased embeddings. \\
+
+\noindent
+In case of ELMo, \cite{zhao2019gender} describe two methods to mitigate bias. The first one is based on data augmentation proposed by \cite{zhao2018learning}. In this process the gender information containing words in sentences are replaced with their opposite genders. The original dataset is retained separately and afterwards, union of the original and augmented dataset is used for training the coreference model. Also, to help mitigate bias from the original approach, they replace GloVe embeddings with the debiased embeddings from \cite{bolukbasi2016man}. \\
+
+\noindent
+The second approach borrows the idea of gender swapping in data from the first approach. Here, instead of retraining the model, they use a average of the union of both datasets (original and gender swapped) as a representation. 
+
+
+\subsection*{Machine Translation}
+\cite{saunders-byrne-2020-reducing} propose a debiasing solution where the objective is to find a trade off between debiasing performance and translation quality. Now why is a trade off necessary here? Based on our discussion so far, we can assume that debiasing or mitigating gender bias may not entirely be possible and \cite{zhao2019gender} have shown that strong debiasing can decrease performance of a system. So here we have a dependency problem. One one hand, not reducing gender bias will hamper the translation performance and on the other hand reducing bias reduces the performance of the overall system. As a result, finding a trade off is necessary. They also propose a scoring system, namely lattice scoring, which is based around increasing accuracy from the translation model. 
 
 \section*{Conclusion}
-Sum up alles
+Gender bias in language is a culmination of various social and traditional factors. While subconsciously being under the influence of these factors, humans tend to pick up the imposed stereotypes and biases without even understanding their implications. This bias translates into their modes of communication and language and in turn affects natural language processing applications as well which use language as a source for their input. This creates a dependency between these aspects, with the social constructs and views toward gender as the stem. While we can explore and find new avenues to mitigate gender bias in NLP systems, the core problem will remain at language level and how we humans use it. 
 
 \clearpage
 \bibliography{bib.bib}
